@@ -1,0 +1,11 @@
+<section class="cards-container">
+  <app-card
+    *ngFor="let card of cards"
+    [imageUrl]="card.imageUrl"
+    [title]="card.title"
+    [description]="card.description"
+    [buttonLabel]="card.buttonLabel"
+    [buttonLink]="card.buttonLink"
+    [titleAlt]="card.titleAlt">
+  </app-card>
+</section>

@@ -1,0 +1,15 @@
+p {
+  z-index: 30;
+  position: absolute;
+  top: 50%;
+  color: #000;
+}
+
+a {
+  display: inline-block;
+  padding: 12px 24px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 4px;
+  text-decoration: none;
+}

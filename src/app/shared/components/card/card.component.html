@@ -1,0 +1,22 @@
+<article class="card">
+  <img [src]="imageUrl" [alt]="titleAlt" class="card-image" loading="lazy">
+  <div class="card-content">
+    <ng-container *ngIf="!isTitleEditing; else elseBlock">
+      <div class="title-content">
+          <h2 class="card-title">{{title}}</h2>
+          <button class="button-edit" type="submit" (click)="toggleTitleEdit()">
+            🖊️
+          </button>
+      </div>
+  </ng-container>
+  <ng-template #elseBlock>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input id="titleImage" formControlName="titleImage" placeholder="title">
+      <button type="submit" class="button-edit"  [disabled]="form.invalid">💾</button>
+    </form>
+  </ng-template>
+
+    <p class="card-description">{{description}}</p>
+    <a [href]="buttonLink" class="card-button">{{buttonLabel}}</a>
+  </div>
+</article>

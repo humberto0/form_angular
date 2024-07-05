@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h1>Registro de novos cards</h1>
+
+  <div *ngFor="let question of questions" class="form-row">
+    <label [attr.for]="question.key">{{question.label}}</label>
+
+    <div [ngSwitch]="question.controlType">
+      <input *ngSwitchCase="'textbox'" [formControlName]="question.key" [id]="question.key" [placeholder]="question.label" [ngClass]="setClass(question.key)">
+    </div>
+
+    <div *ngIf="displayMessage[question.key]">
+      <span class="text-danger">{{ displayMessage[question.key] }}</span>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!form.valid">Register</button>
+</form>
